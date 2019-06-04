@@ -1,18 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Headline = () => {
-    const [greeting, setGreeting] = useState(
-        'Hello Function Component!'
-    );
+const inputStyle = {
+    textAlign: 'center'
+  };
 
-    const handleChange = event => setGreeting(event.target.value);
-
-    return (
-        <div>
-            <h1>{greeting}</h1>
-            <input type="text" value={greeting} onChange={handleChange} />
-        </div>
-    );
-};
+const Headline = ({ headline, onChangeHeadline }) => (
+    <div>
+        <h1>{headline}</h1>
+        <input type="text" value={headline} onChange={onChangeHeadline} size="50" style={inputStyle} />
+    </div>
+);
 
 export default Headline;
